@@ -14,6 +14,13 @@ const cardSlice = createSlice({
     },
     toggleLike(state, action) {
       const cardId = action.payload;
+
+      const card = state.cards.find((card) => card.id === cardId);
+      if (card) {
+        card.isLiked = !card.isLiked;
+      }
+
+      //Update the likeCards array
       if (state.likedCards.includes(cardId)) {
         // Remove card ID from likedCards
         state.likedCards = state.likedCards.filter((id) => id !== cardId);
