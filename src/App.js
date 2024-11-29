@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setCards } from "./store/slice";
+import CardList from "./components/CardList";
+import FilterButton from "./components/FilterButton";
+import axios from "axios";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const [showLiked, setShowLiked] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://rickandmortyapi.com/api/character")
+      .then((response) => {
+        const data = response.data.results.map((item) => ({
+          id: item.id,
+          image: item.image,
+          title: item.name,
+          description: item.status,
+        }));
+        dispatch(setCards(data));
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FilterButton onFilter={setShowLiked} />
+      <CardList showLiked={showLiked} />
     </div>
   );
-}
+};
 
 export default App;
