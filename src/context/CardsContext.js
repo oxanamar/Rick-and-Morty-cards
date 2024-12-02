@@ -6,7 +6,6 @@ const CardsProvider = ({ children }) => {
   const [cards, setCards] = useState([]);
   const [likedCards, setLikedCards] = useState([]);
 
-  // Fetch cards from the API (using fetch)
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((response) => response.json())
@@ -23,7 +22,6 @@ const CardsProvider = ({ children }) => {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  // Toggle like
   const toggleLike = (id) => {
     setCards((prevCards) =>
       prevCards.map((card) =>
@@ -38,7 +36,6 @@ const CardsProvider = ({ children }) => {
     );
   };
 
-  // Delete card
   const deleteCard = (id) => {
     setCards((prevCards) => prevCards.filter((card) => card.id !== id));
     setLikedCards((prevLiked) => prevLiked.filter((likedId) => likedId !== id));
