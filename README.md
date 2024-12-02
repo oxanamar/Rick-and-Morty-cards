@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# 👽🌌Rick And Morty Cards
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rick And Morty Cards is a React-based web application that fetches and displays character cards from the Rick and Morty API. Users can like or delete cards and filter to show only liked cards. The app provides a dynamic and interactive way to explore characters from the popular TV series.
 
-## Available Scripts
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/ee335562-4520-4e65-9864-81b34f4844ac" alt="eng-cards1" width="45%" style="margin-right: 10px;" />
+  <img src="https://github.com/user-attachments/assets/af2efdb6-a61e-4bfe-a1c1-f057717b22e6" alt="eng-cards2" width="45%" />
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Dynamic Character Cards**:  
+  Browse through a collection of Rick and Morty characters with their name, image, and life status.
 
-### `npm test`
+- **Like and Delete Functionality**:  
+  Users can like cards (❤️) and delete unwanted cards (🗑️). 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Liked Cards Filter**:  
+  A dedicated filter to view only liked cards and toggle back to view all cards.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img align="left" alt="React.js" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />
+React.js for the frontend.  
+Uses Context API for state management and the Rick and Morty API for fetching character data.
 
-### `npm run eject`
+<br>
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Step 1: Clone the Repository
+```bash
+git clone https://github.com/oxanamar/Rick-and-Morty-cards.git
+cd Rick-and-Morty-cards
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Step 2: Install dependencies
+Inside the project directory, run the following command to install Express and other dependencies:
+```bash
+npm install
+```
 
-## Learn More
+#### Step 3: Start the development server
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Step 4: Open your browser and go to `http://localhost:3000` to see the project in action 🙌🏻
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
