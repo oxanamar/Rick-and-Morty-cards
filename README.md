@@ -51,5 +51,5 @@ npm install
 npm start
 ```
 
-#### Step 4: Open your browser and go to `http://localhost:3000` to see the project in action 🙌🏻
+#### Step 4: Open your browser and go to `http://localhost:3000` to see the project in action 🛸
 
