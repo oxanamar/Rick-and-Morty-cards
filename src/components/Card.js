@@ -1,19 +1,21 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { toggleLike, deleteCard } from "../store/slice";
+import React, { useContext } from "react";
+import { CardsContext } from "../context/CardsContext";
+import styles from "./Card.module.css";
 
 const Card = ({ card }) => {
-  const dispatch = useDispatch();
+  const { toggleLike, deleteCard } = useContext(CardsContext);
 
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img src={card.image} alt={card.title} />
       <h3>{card.title}</h3>
       <p>{card.description}</p>
-      <button onClick={() => dispatch(toggleLike(card.id))}>
-        {card.isLiked ? "❤️" : "🤍"}
-      </button>
-      <button onClick={() => dispatch(deleteCard(card.id))}>🗑️</button>
+      <div className={styles.buttonContainer}>
+        <button onClick={() => toggleLike(card.id)}>
+          {card.isLiked ? "❤️" : "🤍"}
+        </button>
+        <button onClick={() => deleteCard(card.id)}>🗑️</button>
+      </div>
     </div>
   );
 };

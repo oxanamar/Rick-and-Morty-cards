@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./FilterButton.module.css";
 
 const FilterButton = ({ onFilter }) => {
   const [showLiked, setShowLiked] = useState(false);
@@ -9,7 +10,7 @@ const FilterButton = ({ onFilter }) => {
   };
 
   return (
-    <button onClick={toggleFilter}>
+    <button className={styles.filterButton} onClick={toggleFilter}>
       {showLiked ? "Показать все" : "Показать залайканные"}
     </button>
   );

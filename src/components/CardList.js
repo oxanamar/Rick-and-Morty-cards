@@ -1,18 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useContext } from "react";
 import Card from "./Card";
+import { CardsContext } from "../context/CardsContext";
+import styles from "./CardList.module.css";
 
 const CardList = ({ showLiked }) => {
-  const { cards, likedCards } = useSelector((state) => state.cards);
+  const { cards, likedCards } = useContext(CardsContext);
 
   const filteredCards = showLiked
     ? cards.filter((card) => likedCards.includes(card.id))
     : cards;
 
   return (
-    <div className="card-list">
+    <div className={showLiked ? styles.likedCardsPage : styles.cardList}>
       {filteredCards.map((card) => (
-        <Card key={card.id} card={card} />
+        <Card key={card.id} card={card} isLikedPage={showLiked} />
       ))}
     </div>
   );
